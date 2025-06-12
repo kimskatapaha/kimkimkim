@@ -1,0 +1,34 @@
+oneClickMatch 디벨롭
+
+
+import maya.cmds as cmds
+import re
+#파이썬 re를 불러오기.
+
+list = cmds.ls()
+name = 'Index' 
+#이름에 Index라는 문자를 포함한 것들을 전부 불러온다.
+
+pattern = r'\S+_\S+_{}\d+'.format(name)
+# '\(역슬래시)S(대문자)'가 의미하는 것은 \s의 검사범위를 제외한 모든 숫자라는 뜻이다.
+# '\(역슬래시)d(소문자)'아 의미하는 것은 숫자. 
+# 문자열이 달라지면 위의 정규식을 수정하면서 찾는다.
+
+
+for x in list:
+    match = re.search(pattern, x)
+    if match:
+        Find = match.group()
+        print(Find)
+
+
+
+
+#------------------------------------------------------------------------------------
+    for ctrl in ctrlList:
+        ctrl_n_name = ctrl.split('_')[-2]
+        for jnt in jntList:
+            jnt_n_name = jnt.split('_')[-2]
+            if jnt_n_name.isdigit() and ctrl_n_name.isdigit() and jnt_n_name == ctrl_n_name:
+
+이 스크립트를 파이썬 정규식으로 나타낸것임. 

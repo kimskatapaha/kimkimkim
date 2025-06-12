@@ -1,0 +1,37 @@
+#import commnad
+import maya.cmds as cmds
+import random
+
+#function define
+def GeoMover():
+    
+    #select Obj (Ground)
+    select = cmds.ls(sl=True)
+
+    #select copy Obj (Object name in '_Geo')
+    selected = cmds.ls(selection=True)
+    geoList = []
+    for obj in selected:
+        if '_Geo' in obj:
+            geoList.append(obj)
+
+    #Repeat       
+    if len(geoList) == 0:
+        return
+
+    for obj in geoList:
+        num_copies = random.randint(1, len(geoList)) 
+        copied_objects = cmds.duplicate(obj, name=obj + "_#", rc=True)
+        
+        #random Module 
+        for iter in select:
+            randomNumber = random.uniform(0, 100)
+            if randomNumber <= 50:
+                pos = cmds.xform(iter, q=True, t=True)
+                for copied_obj in copied_objects:
+                    cmds.setAttr(copied_obj + ".translate", pos[0]+random.uniform(-1,1), pos[1], pos[2]+random.uniform(-1,1))
+                    treeSacle = random.uniform(0.8, 1.2)
+                    cmds.setAttr(copied_obj + ".scale", treeSacle, treeSacle, treeSacle)
+                    cmds.setAttr(copied_obj + ".rotateY", random.uniform(0, 360))
+
+GeoMover()

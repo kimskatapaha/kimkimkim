@@ -1,0 +1,24 @@
+오토리깅 손가락 정렬하기
+
+0)
+LfIndexRoot_Jnt - LfIndex1_Jnt - LfIndex2_Jnt - LfIndex3_Jnt - LfIndex4_Jnt
+LfMiddleRoot_Jnt - LfMiddle1_Jnt - LfMiddle2_Jnt - LfMiddle3_Jnt - LfMiddle4_Jnt
+LfRingRoot_Jnt - LfRing1_Jnt - LfRing2_Jnt - LfRing3_Jnt - LfRing4_Jnt
+LfPinkyRoot_Jnt - LfPinky1_Jnt - LfPinky2_Jnt - LfPinky3_Jnt - LfPinky4_Jnt
+LfThumbRoot_Jnt - LfThumb1_Jnt - LfThumb2_Jnt - LfThumb3_Jnt
+
+0. 선택된 조인트들중에 위의 0)과 이름이 같은 것들을 리스트에 넣는다.
+0-1. 그리고 그 밑 하위 조인트들을 각각의 리스트에 넣는다.
+
+
+2. 조인트 오리엔트를 0으로 맞춘다.
+3. 트렌스레잇(X를 제외한,나중엔y로 변경) 로테이트 역시 0으로 프리즈 한다.
+1. 1234_Jnt들의 엑세스를 Root_Jnt과 맞춘다. 
+
+
+
+
+
+sel = cmds.ls(type = 'joint')
+
+sel = [x for x in sel if 'Rt' in x]

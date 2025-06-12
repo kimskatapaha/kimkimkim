@@ -1,0 +1,19 @@
+Khn_Ui 설명
+위에서 아래로 내려가면서 설명함
+
+
+
+1. Create: 로케이터와 클러스터, 조인트중 하나를 선택한 후 파란 Enter를 클릭. 오브젝트가 생성후 선택된다.
++) 클러스터를 생성할 때엔 오브젝트나 Cv를 선택한 후에 생성해야 함
+
+2. Paint Skin Weights Tool: Paint Skin Weights Tool을 호출한다. rigging탭으로 들어가 더블 클릭해야하는 번거로움을 없앰
+
+3.Hand Joint Clean: 회사 내 오토리깅 이름에 맞춰 설정되어있는 조인트 펴기. 이름을 변경하고 싶다면 스크립트 19번째 줄 부터 손가락 순서에 따라 바꿔주면 됨.
+
+4. DeleteHisAndFreeze: 씬 내에서 '_Geo' 가 들어간 매쉬들에 Freeze시킨다. 히스토리도 날아가기 때문에 주의하기.
+
+5. oneClickMatch: Loc->Jnt 버튼은 조인트에 로케이터가 매치트랜스폼 됨. Ctrl->Jnt 버튼은 조인트에 컨트롤러가 매치 트랜스폼 된다. 마지만 blend 버튼은 이름에 '_Dummy' 들어간 오브젝트가 이름에 '_Geo' 들어간 오브젝트로 블렌드 쉐입 됨.
+
+6. Finding Node: 빈칸에 찾고싶은 이름을 타이핑하고 빨간 Enter를 클릭함. 타이핑 된 글자가 이름에 포함되는 오브젝트들이 선택된다. 
++) 아웃라이너 한정이 아님. (예: locator를 타이핑하고 Enter를 클릭하면 locatorShape까지 선택된다.)
+
